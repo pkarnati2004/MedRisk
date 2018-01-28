@@ -36,6 +36,10 @@ def hello_world():
 def form():
     return render_template('index.html')
 
+@app.route('/company')
+def show():
+    return render_template('company.html')
+
 @app.route('/plotlib')
 def plot():
 
