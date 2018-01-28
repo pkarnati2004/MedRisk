@@ -141,9 +141,10 @@
                         <option value = "SP_ALZHDMTA">Alzheimers</option>
                     </select> -->
                     <button class="button">Submit</button>
+                    <h2> Currently showing risk analysis for {{race_disease}}</h2>
                 </div>
             </form>
-            <div style="top: 50px">
+            <div style="left: 20px; top: 50px;">
                 {% set path = '/templates/' + race_script %}{% include race_script %} {% set path = '/templates/' + race_div %}{% include race_div %}
             </div>
         </article>
@@ -182,8 +183,8 @@
 
         </article>
     </section>
-    <div class="logo" target="_blank">
-        <img onclick="goBack()" class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/45226/ettrics-logo.svg" alt="" />
+    <div class="logo" target="_blank" id="back">
+        <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/45226/ettrics-logo.svg" alt="" />
     </div>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="/static/js/companyIndex.js"></script>
@@ -227,6 +228,11 @@
             console.log("HELLO");
             location.href = "index.html";
         }
+
+
+        document.getElementById("back").onclick = function() {
+            location.href = "{{ url_for('hello_world') }}";
+        };
     </script>
 
 
