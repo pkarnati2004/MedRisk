@@ -37,7 +37,7 @@ for row in reader:
 
 
 ### Purple/Red color scheme. Replace line below with colors above to try others.
-colors = ["#F1EEF6", "#D4B9DA", "#C994C7", "#DF65B0", "#DD1C77", "#980043"]
+colors = ["#AED6F1", "#85C1E9", "#5DADE2", "#3498DB", "#3498DB", "#2874A6"]
 
 
 # Load the SVG map
