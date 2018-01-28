@@ -9,7 +9,7 @@
 <script src="https://code.highcharts.com/mapdata/countries/us/us-all-all.js"></script>
 
 <script>
-    $.getJSON('static/data/1.json', function(data) {
+    $.getJSON('fold/0.json', function(json) {
 
         console.log("hello");
 
@@ -46,12 +46,12 @@
             },
 
             title: {
-                text: 'US Counties unemployment rates, April 2015'
+                text: "Results"
             },
 
             legend: {
                 title: {
-                    text: 'Unemployment<br>rate',
+                    text: 'Legend',
                     style: {
                         color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
                     }
@@ -73,26 +73,26 @@
             colorAxis: {
                 dataClasses: [{
                     from: 0,
-                    to: 10,
+                    to: 50,
                     color: "#F1EEF6"
                 }, {
-                    from: 10,
-                    to: 25,
+                    from: 50,
+                    to: 100,
                     color: "#D4B9DA"
                 }, {
-                    from: 25,
-                    to: 40,
+                    from: 100,
+                    to: 200,
                     color: "#C994C7"
                 }, {
-                    from: 40,
-                    to: 48,
+                    from: 200,
+                    to: 300,
                     color: "#DF65B0"
                 }, {
-                    from: 48,
-                    to: 70,
+                    from: 300,
+                    to: 400,
                     color: "#DD1C77"
                 }, {
-                    from: 70,
+                    from: 400,
                     color: "#980043"
                 }]
             },
@@ -106,7 +106,7 @@
 
             series: [{
                 mapData: countiesMap,
-                data: data,
+                data: json,
                 joinBy: ['hc-key', 'code'],
                 name: 'Unemployment rate',
                 tooltip: {

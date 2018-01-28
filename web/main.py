@@ -11,6 +11,9 @@ from bokeh.io import show, output_file
 from bokeh.palettes import Spectral6
 
 from train import run_model
+import json 
+
+import pprint
 
 import os
 
@@ -28,6 +31,20 @@ disease_map = {
     "SP_RA_OA": " arthritis",
     "SP_STRKETIA": " stroke",
     "SP_ALZHDMTA": " alzheimers"
+    }
+
+disease_num_map = {
+    "SP_CHF": 1,
+    "SP_CHRNKIDN": 2,
+    "SP_CNCR": 3,
+    "SP_COPD": 4,
+    "SP_DEPRESSN": 5,
+    "SP_DIABETES": 6,
+    "SP_ISCHMCHT": 7,
+    "SP_OSTEOPRS": 8,
+    "SP_RA_OA": 9,
+    "SP_STRKETIA": 10,
+    "SP_ALZHDMTA": 11
     }
 
 race_map = {
@@ -60,6 +77,18 @@ def hello_world():
 @app.route('/form')
 def form():
     return render_template('index.html')
+
+@app.route('/company_heat', methods=['GET', 'POST'])
+def company_heat():
+    # data = json.load(open('static/data/0.json'))
+    # print(data)
+    # pprint.pprint(data[0])  
+
+    value = request.form.get('stateCon')
+    num = disease_num_map[value]
+    path = str(num) + '.json'
+
+    return render_template('bars.html')
 
 
 @app.route('/results', methods=['GET', 'POST'])

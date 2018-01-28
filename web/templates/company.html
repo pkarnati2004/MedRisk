@@ -17,6 +17,15 @@
 
     <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/mapdata/countries/us/us-all-all.js"></script>
+
     <style>
         .button {
             display: inline-block;
@@ -65,7 +74,7 @@
 
     <section class="panel b-blue" id="1">
         <article class="panel__wrapper">
-            <form method="POST">
+            <form method="POST" action="{{url_for( 'company_heat')}}">
                 <div class="panel__content">
                     <h1 class="panel__headline">&nbsp;State</h1>
                     <div class="panel__block"></div>
@@ -84,35 +93,14 @@
                     </select>
                     <!-- <button class="button" onclick="getStateCon()">Submit</button> -->
                     <button class="button" type="submit">Submit</button>
+
                 </div>
+                <img style="position:relative; left: 100px;" src="/static/images/bar.png" height="400px" width="600px" />
             </form>
+
+
         </article>
 
-    </section>
-    <section class="panel b-yellow" id="2">
-        <article class="panel__wrapper">
-            <div class="panel__content">
-                <h1 class="panel__headline">&nbsp;Age</h1>
-                <div class="panel__block"></div>
-                <span class="label-input100">Age</span>
-                <input id="age" type="number" name="email" placeholder="Enter your age">
-                <span class="focus-input100"></span>
-                <span> Condition:</span>
-                <select id="ageCon">
-             <option value = "SP_CNCR">Cancer</option>
-            <option value = "SP_CHF">Health Failure</option>
-            <option value = "SP_CHRNKIDN">Chronic Kidney Disease</option>
-            <option value = "SP_DIABETES">Diabetes</option>
-            <option value = "SP_DEPRESSN">Depression</option>
-            <option value = "SP_ISCHMCHT">Ischemic Heart Disease</option>
-            <option value = "SP_OSTEOPRS">Osteoporosis</option>
-            <option value = "SP_RA_OA">Arthritis</option>
-            <option value = "SP_STRKETIA">Stroke</option>
-            <option value = "SP_ALZHDMTA">Alzheimers</option>
-        </select>
-                <button class="button" onclick="getAgeCon()">submit</button>
-            </div>
-        </article>
     </section>
     <section class="panel b-red" id="3">
         <article class="panel__wrapper">
