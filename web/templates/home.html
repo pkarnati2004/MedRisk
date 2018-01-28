@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome</title>
+    <meta charset="UTF-8">
+    <style>
+        @font-face {
+            font-family: Poppins-Regular;
+            src: url('../static/fonts/poppins/Poppins-Regular.ttf');
+        }
+        
+        @font-face {
+            font-family: Poppins-Medium;
+            src: url('../static/fonts/poppins/Poppins-Medium.ttf');
+        }
+        
+        @font-face {
+            font-family: Poppins-Bold;
+            src: url('../static/fonts/poppins/Poppins-Bold.ttf');
+        }
+        
+        body {
+            background-image: url("../static/images/welcome_background.jpg");
+            background-size: cover;
+        }
+        
+        body,
+        html {
+            height: 100%;
+            font-family: Poppins-Regular, sans-serif;
+        }
+        
+        h1 {
+            color: #FFFFFF;
+            position: absolute;
+            top: 150px;
+            left: 500px;
+            /* position: relative;
+            text-align: center;
+            top: 70%;
+            vertical-align: middle; */
+            font-family: Poppins-Bold;
+            font-size: 60px;
+        }
+        
+        h2 {
+            color: #FFFFFF;
+            position: absolute;
+            top: 320px;
+            left: 550px;
+            /* text-align: center; */
+            /* vertical-align: middle; */
+            /* font-family: Sans-serif; */
+            font-family: Poppins-Bold;
+            font-size: 24px;
+        }
+        
+        #companyBtn {
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            color: #fff;
+            font-family: Poppins-Regular;
+            font-size: 23px;
+            height: 90px;
+            width: 280px;
+            line-height: 60px;
+            outline-color: azure;
+            margin: 25px 25px;
+            text-align: center;
+            transition: all 0.3s ease 0s;
+            position: absolute;
+            left: 300px;
+            top: 400px;
+            /* align-self: center; */
+            /* position: relative; */
+        }
+        
+        #userBtn {
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            color: #fff;
+            font-family: Poppins-Regular;
+            font-size: 23px;
+            height: 90px;
+            width: 280px;
+            line-height: 60px;
+            outline-color: azure;
+            margin: 25px 25px;
+            text-align: center;
+            transition: all 0.3s ease 0s;
+            position: absolute;
+            left: 650px;
+            top: 400px;
+            /* text-align: center; */
+            /* position: relative; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <h2>Choose Domain:</h2>
+        <div style="text-align: center; top: 400px;">
+            <button type="button" id="companyBtn"> Company </button>
+            <button type="button" id="userBtn"> Patient </button>
+        </div>
+
+
+
+    </div>
+
+    <script type="text/javascript" language="JavaScript">
+        document.getElementById("companyBtn").onclick = function() {
+            location.href = "{{ url_for('plot') }}";
+        };
+
+        document.getElementById("userBtn").onclick = function() {
+            location.href = "{{ url_for('form') }}";
+        };
+    </script>
+
+</body>
+
+</html>
