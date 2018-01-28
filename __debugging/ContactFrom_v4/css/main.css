@@ -38,6 +38,7 @@
 }
 
 body, html {
+    background-color:#D7BDE2;
 	height: 100%;
 	font-family: Poppins-Regular, sans-serif;
 }
@@ -157,11 +158,8 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #a64bf4;
-  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  background: #D2B4DE;
+  
   
 }
 
@@ -301,11 +299,6 @@ textarea.input100 {
   z-index: -1;
   width: 300%;
   height: 100%;
-  background: #a64bf4;
-  background: -webkit-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: -o-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: -moz-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
   top: 0;
   left: -100%;
 
@@ -329,7 +322,6 @@ textarea.input100 {
 
   font-family: Poppins-Medium;
   font-size: 16px;
-  color: #fff;
   line-height: 1.2;
 }
 
