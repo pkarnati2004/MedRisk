@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>
+        Bokeh Plots
+    </title>
+    <meta charset="UTF-8">
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.css" rel="stylesheet" type="text/css">
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.13.min.css" rel="stylesheet" type="text/css">
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.13.min.css" rel="stylesheet" type="text/css">
+
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.13.min.js"></script>
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.13.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.css" type="text/css" />
+
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
+
+    <style>
+        @font-face {
+            font-family: Poppins-Regular;
+            src: url('../static/fonts/poppins/Poppins-Regular.ttf');
+        }
+        
+        @font-face {
+            font-family: Poppins-Medium;
+            src: url('../static/fonts/poppins/Poppins-Medium.ttf');
+        }
+        
+        @font-face {
+            font-family: Poppins-Bold;
+            src: url('../static/fonts/poppins/Poppins-Bold.ttf');
+        }
+        
+        body {
+            background-image: url("../static/images/welcome_background.jpg");
+            background-size: cover;
+        }
+        
+        body,
+        html {
+            height: 100%;
+            font-family: Poppins-Regular, sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>
+        Hello
+    </h1>
+    <!-- {{div}} {{script}} -->
+    <div align="center">
+        {% set path = '/templates/' + script %}{% include script %}
+    </div>
+
+</body>
+
+
+
+</html>
