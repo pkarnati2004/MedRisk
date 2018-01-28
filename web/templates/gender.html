@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Gender Risk Analysis</title>
+        
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.css" type="text/css" />
+        
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+        <style>
+          html {
+            width: 100%;
+            height: 100%;
+          }
+          body {
+            width: 90%;
+            height: 100%;
+            margin: auto;
+          }
+        </style>
+    </head>
+    <body>
+        
+        <div class="bk-root">
+            <div class="bk-plotdiv" id="db5ac637-f3b9-446a-a97f-101abbe9fbd4"></div>
+        </div>
+        
+        <script type="application/json" id="aada43ab-418b-44b7-ab2b-3fec2453c1d8">
+          {"ca811983-2431-4ccd-8b8f-1091a48d5f3e":{"roots":{"references":[{"attributes":{"formatter":{"id":"c56d0c3b-718e-424e-897d-f21f4f19989a","type":"BasicTickFormatter"},"plot":{"id":"4e297391-471a-4e01-8ee6-c5073667bba7","subtype":"Figure","type":"Plot"},"ticker":{"id":"d0196ea2-0a0b-47e4-9017-bf6ffeabe560","type":"BasicTicker"}},"id":"9268085e-d5e9-49c0-a3e6-8443797ee8b4","type":"LinearAxis"},{"attributes":{"formatter":{"id":"719f0d22-0082-4ac4-97f7-fdc784da3959","type":"CategoricalTickFormatter"},"plot":{"id":"4e297391-471a-4e01-8ee6-c5073667bba7","subtype":"Figure","type":"Plot"},"ticker":{"id":"463dadc5-4e75-47b9-9069-54125a075097","type":"CategoricalTicker"}},"id":"99feb485-3871-496b-a6b3-88b32f72f2e2","type":"CategoricalAxis"},{"attributes":{},"id":"463dadc5-4e75-47b9-9069-54125a075097","type":"CategoricalTicker"},{"attributes":{},"id":"719f0d22-0082-4ac4-97f7-fdc784da3959","type":"CategoricalTickFormatter"},{"attributes":{"plot":{"id":"4e297391-471a-4e01-8ee6-c5073667bba7","subtype":"Figure","type":"Plot"},"ticker":{"id":"463dadc5-4e75-47b9-9069-54125a075097","type":"CategoricalTicker"}},"id":"5d2da1bc-b8c6-4279-ad7a-d07f62160dca","type":"Grid"},{"attributes":{"source":{"id":"62e3f2f9-bc99-426b-a011-5966d2ee1704","type":"ColumnDataSource"}},"id":"7ac5931e-b35f-4893-953f-dd6b00f088d8","type":"CDSView"},{"attributes":{},"id":"d0196ea2-0a0b-47e4-9017-bf6ffeabe560","type":"BasicTicker"},{"attributes":{"dimension":1,"plot":{"id":"4e297391-471a-4e01-8ee6-c5073667bba7","subtype":"Figure","type":"Plot"},"ticker":{"id":"d0196ea2-0a0b-47e4-9017-bf6ffeabe560","type":"BasicTicker"}},"id":"262c7d09-e734-47c6-846c-cd9fba5df25b","type":"Grid"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"263c312a-c07f-4c89-8ff4-d632c2554196","type":"BoxAnnotation"},{"attributes":{"callback":null,"column_names":["x","top"],"data":{"top":{"__ndarray__":"978rm5zsMUCycv316T00QA==","dtype":"float64","shape":[2]},"x":["MALE","FEMALE"]}},"id":"62e3f2f9-bc99-426b-a011-5966d2ee1704","type":"ColumnDataSource"},{"attributes":{},"id":"afa4e617-0732-46c5-b760-f76f29aef6a0","type":"PanTool"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.4},"x":{"field":"x"}},"id":"e55189f5-f505-4fd8-b9d5-60e972d6b402","type":"VBar"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.4},"x":{"field":"x"}},"id":"645cea6d-c8f2-436d-8a3d-929858dcda20","type":"VBar"},{"attributes":{},"id":"e4fd7923-ede9-44cf-ab01-f82d03f35560","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"263c312a-c07f-4c89-8ff4-d632c2554196","type":"BoxAnnotation"}},"id":"d74ec687-1735-4ec7-9fa0-7e81073093e9","type":"BoxZoomTool"},{"attributes":{},"id":"0c79e86f-2dbd-46ea-8dd5-aecf015f1467","type":"SaveTool"},{"attributes":{"callback":null,"factors":["MALE","FEMALE"]},"id":"d90f0bea-8ae6-4302-ada5-376e6de8758e","type":"FactorRange"},{"attributes":{},"id":"bc5179c6-7b6d-4fbe-80b9-aca3997319c6","type":"ResetTool"},{"attributes":{},"id":"47cf7dd7-2667-44b6-afe1-d87121a03ce6","type":"HelpTool"},{"attributes":{"below":[{"id":"99feb485-3871-496b-a6b3-88b32f72f2e2","type":"CategoricalAxis"}],"left":[{"id":"9268085e-d5e9-49c0-a3e6-8443797ee8b4","type":"LinearAxis"}],"plot_height":250,"renderers":[{"id":"99feb485-3871-496b-a6b3-88b32f72f2e2","type":"CategoricalAxis"},{"id":"5d2da1bc-b8c6-4279-ad7a-d07f62160dca","type":"Grid"},{"id":"9268085e-d5e9-49c0-a3e6-8443797ee8b4","type":"LinearAxis"},{"id":"262c7d09-e734-47c6-846c-cd9fba5df25b","type":"Grid"},{"id":"263c312a-c07f-4c89-8ff4-d632c2554196","type":"BoxAnnotation"},{"id":"11e9f757-a085-428f-acfe-ddf1c2b2d0f6","type":"GlyphRenderer"}],"title":{"id":"a407cf7a-4afe-4724-9422-1c3c9b2fde62","type":"Title"},"toolbar":{"id":"0a9347b9-1035-4664-9a39-be167812808d","type":"Toolbar"},"x_range":{"id":"d90f0bea-8ae6-4302-ada5-376e6de8758e","type":"FactorRange"},"x_scale":{"id":"b0e25c45-c43b-4425-a8ac-e84aab5e7602","type":"CategoricalScale"},"y_range":{"id":"d700a714-0c1e-4699-bcf3-dff76c17f599","type":"DataRange1d"},"y_scale":{"id":"18663c9e-6a59-4e03-a991-edbf5009af02","type":"LinearScale"}},"id":"4e297391-471a-4e01-8ee6-c5073667bba7","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"c56d0c3b-718e-424e-897d-f21f4f19989a","type":"BasicTickFormatter"},{"attributes":{"plot":null,"text":"Gender Disease Trends for Alzhiemers"},"id":"a407cf7a-4afe-4724-9422-1c3c9b2fde62","type":"Title"},{"attributes":{"data_source":{"id":"62e3f2f9-bc99-426b-a011-5966d2ee1704","type":"ColumnDataSource"},"glyph":{"id":"e55189f5-f505-4fd8-b9d5-60e972d6b402","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"645cea6d-c8f2-436d-8a3d-929858dcda20","type":"VBar"},"selection_glyph":null,"view":{"id":"7ac5931e-b35f-4893-953f-dd6b00f088d8","type":"CDSView"}},"id":"11e9f757-a085-428f-acfe-ddf1c2b2d0f6","type":"GlyphRenderer"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_scroll":"auto","active_tap":"auto","tools":[{"id":"afa4e617-0732-46c5-b760-f76f29aef6a0","type":"PanTool"},{"id":"e4fd7923-ede9-44cf-ab01-f82d03f35560","type":"WheelZoomTool"},{"id":"d74ec687-1735-4ec7-9fa0-7e81073093e9","type":"BoxZoomTool"},{"id":"0c79e86f-2dbd-46ea-8dd5-aecf015f1467","type":"SaveTool"},{"id":"bc5179c6-7b6d-4fbe-80b9-aca3997319c6","type":"ResetTool"},{"id":"47cf7dd7-2667-44b6-afe1-d87121a03ce6","type":"HelpTool"}]},"id":"0a9347b9-1035-4664-9a39-be167812808d","type":"Toolbar"},{"attributes":{"callback":null,"end":100,"start":0},"id":"d700a714-0c1e-4699-bcf3-dff76c17f599","type":"DataRange1d"},{"attributes":{},"id":"b0e25c45-c43b-4425-a8ac-e84aab5e7602","type":"CategoricalScale"},{"attributes":{},"id":"18663c9e-6a59-4e03-a991-edbf5009af02","type":"LinearScale"}],"root_ids":["4e297391-471a-4e01-8ee6-c5073667bba7"]},"title":"Bokeh Application","version":"0.12.13"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('aada43ab-418b-44b7-ab2b-3fec2453c1d8').textContent;
+                  var render_items = [{"docid":"ca811983-2431-4ccd-8b8f-1091a48d5f3e","elementid":"db5ac637-f3b9-446a-a97f-101abbe9fbd4","modelid":"4e297391-471a-4e01-8ee6-c5073667bba7"}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing")
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    </body>
+</html>

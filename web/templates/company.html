@@ -3,15 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Vertical Layout with Navigation</title>
-    <link rel="stylesheet" href="/static/css/plotStyleSheet.css">
-    <link href="/static/css/plotFontStyle.css" rel="stylesheet">
+    <title>Company Risk Analysis</title>
+    <link rel="stylesheet" href="/static/css/companyStyleSheet.css">
+    <link href="/static/css/companyFontStyle.css" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="/static/css/plotNormStyle.css">
+    <link rel="stylesheet" href="/static/css/companyNormStyle.css">
 
 
-    <link rel="stylesheet" href="/static/css/plotStyle.css">
+    <link rel="stylesheet" href="/static/css/companyMainStyle.css">
+
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.css" type="text/css" />
+
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
+
+    <style>
+        .button {
+            display: inline-block;
+            margin: 0;
+            padding: 0.75rem 1rem;
+            border: 0;
+            border-radius: 0.317rem;
+            background-color: rgb(36, 34, 34);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.5;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
 
 
 </head>
@@ -41,25 +65,29 @@
 
     <section class="panel b-blue" id="1">
         <article class="panel__wrapper">
-            <div class="panel__content">
-                <h1 class="panel__headline">&nbsp;State</h1>
-                <div class="panel__block"></div>
-                <span> Condition:</span>
-                <select id="stateCon">
-            <option value = "SP_CNCR">Cancer</option>
-            <option value = "SP_CHF">Health Failure</option>
-            <option value = "SP_CHRNKIDN">Chronic Kidney Disease</option>
-            <option value = "SP_DIABETES">Diabetes</option>
-            <option value = "SP_DEPRESSN">Depression</option>
-            <option value = "SP_ISCHMCHT">Ischemic Heart Disease</option>
-            <option value = "SP_OSTEOPRS">Osteoporosis</option>
-            <option value = "SP_RA_OA">Arthritis</option>
-            <option value = "SP_STRKETIA">Stroke</option>
-            <option value = "SP_ALZHDMTA">Alzheimers</option>
-        </select>
-                <button onclick="getStateCon()">Submit</button>
-            </div>
+            <form method="POST">
+                <div class="panel__content">
+                    <h1 class="panel__headline">&nbsp;State</h1>
+                    <div class="panel__block"></div>
+                    <span> Condition:</span>
+                    <select id="stateCon" name="stateCon">
+                        <option value = "SP_CNCR">Cancer</option>
+                        <option value = "SP_CHF">Health Failure</option>
+                        <option value = "SP_CHRNKIDN">Chronic Kidney Disease</option>
+                        <option value = "SP_DIABETES">Diabetes</option>
+                        <option value = "SP_DEPRESSN">Depression</option>
+                        <option value = "SP_ISCHMCHT">Ischemic Heart Disease</option>
+                        <option value = "SP_OSTEOPRS">Osteoporosis</option>
+                        <option value = "SP_RA_OA">Arthritis</option>
+                        <option value = "SP_STRKETIA">Stroke</option>
+                        <option value = "SP_ALZHDMTA">Alzheimers</option>
+                    </select>
+                    <!-- <button class="button" onclick="getStateCon()">Submit</button> -->
+                    <button class="button" type="submit">Submit</button>
+                </div>
+            </form>
         </article>
+
     </section>
     <section class="panel b-yellow" id="2">
         <article class="panel__wrapper">
@@ -82,73 +110,83 @@
             <option value = "SP_STRKETIA">Stroke</option>
             <option value = "SP_ALZHDMTA">Alzheimers</option>
         </select>
-                <button onclick="getAgeCon()">submit</button>
+                <button class="button" onclick="getAgeCon()">submit</button>
             </div>
         </article>
     </section>
     <section class="panel b-red" id="3">
         <article class="panel__wrapper">
-            <div class="panel__content">
-                <h1 class="panel__headline">&nbsp;Race</h1>
-                <div class="panel__block"></div>
-                <span> Race:</span>
-                <select id="race">
-            <option value = "asian">Asian</option>
-            <option value = "white">White</option>
-            <option value = "black">African America</option>
-            <option value = "hispanic">Hispanic</option>
-            <option value = "caucasian">Caucasian</option>
-            <option value = "other">Others</option>
-        </select>
-                <span> Condition:</span>
-                <select id="raceCon">
-              <option value = "SP_CNCR">Cancer</option>
-            <option value = "SP_CHF">Health Failure</option>
-            <option value = "SP_CHRNKIDN">Chronic Kidney Disease</option>
-            <option value = "SP_DIABETES">Diabetes</option>
-            <option value = "SP_DEPRESSN">Depression</option>
-            <option value = "SP_ISCHMCHT">Ischemic Heart Disease</option>
-            <option value = "SP_OSTEOPRS">Osteoporosis</option>
-            <option value = "SP_RA_OA">Arthritis</option>
-            <option value = "SP_STRKETIA">Stroke</option>
-            <option value = "SP_ALZHDMTA">Alzheimers</option>
-        </select>
-                <button onclick="getRaceCon()">submit</button>
+            <form method="POST" action="{{url_for( 'company_race')}}">
+                <div class="panel__content">
+                    <h1 class="panel__headline">&nbsp;Race</h1>
+                    <div class="panel__block"></div>
+                    <span> Race:</span>
+                    <select id="race" name="race">
+                        <option value = "white">White</option>
+                        <option value = "black">African American</option>
+                        <option value = "hispanic">Hispanic</option>
+                        <option value = "other">Other</option>
+                    </select>
+                    <!-- <span> Condition:</span>
+                    <select id="raceCon">
+                          <option value = "SP_CNCR">Cancer</option>
+                        <option value = "SP_CHF">Health Failure</option>
+                        <option value = "SP_CHRNKIDN">Chronic Kidney Disease</option>
+                        <option value = "SP_DIABETES">Diabetes</option>
+                        <option value = "SP_DEPRESSN">Depression</option>
+                        <option value = "SP_ISCHMCHT">Ischemic Heart Disease</option>
+                        <option value = "SP_OSTEOPRS">Osteoporosis</option>
+                        <option value = "SP_RA_OA">Arthritis</option>
+                        <option value = "SP_STRKETIA">Stroke</option>
+                        <option value = "SP_ALZHDMTA">Alzheimers</option>
+                    </select> -->
+                    <button class="button">Submit</button>
+                </div>
+            </form>
+            <div style="top: 50px">
+                {% set path = '/templates/' + race_script %}{% include race_script %} {% set path = '/templates/' + race_div %}{% include race_div %}
             </div>
         </article>
     </section>
     <section class="panel b-green" id="4">
         <article class="panel__wrapper">
-            <div class="panel__content">
-                <h1 class="panel__headline">&nbsp;Gender</h1>
-                <div class="panel__block"></div>
-                <span> Gender:</span>
-                <select id="gender">
-            <option value = "M">Male</option>
-            <option value = "F">Female</option>
-        </select>
-                <span> Condition:</span>
-                <select id="genderCon">
-             <option value = "SP_CNCR">Cancer</option>
-            <option value = "SP_CHF">Health Failure</option>
-            <option value = "SP_CHRNKIDN">Chronic Kidney Disease</option>
-            <option value = "SP_DIABETES">Diabetes</option>
-            <option value = "SP_DEPRESSN">Depression</option>
-            <option value = "SP_ISCHMCHT">Ischemic Heart Disease</option>
-            <option value = "SP_OSTEOPRS">Osteoporosis</option>
-            <option value = "SP_RA_OA">Arthritis</option>
-            <option value = "SP_STRKETIA">Stroke</option>
-            <option value = "SP_ALZHDMTA">Alzheimers</option>
-        </select>
-                <button onclick="getGenderCon()">submit</button>
+            <form method="POST" action="{{url_for( 'company_gender')}}">
+                <div class="panel__content">
+                    <h1 class="panel__headline">&nbsp;Gender</h1>
+                    <div class="panel__block"></div>
+                    <!-- <span> Gender:</span>
+                            <select id="gender">
+                        <option value = "M">Male</option>
+                        <option value = "F">Female</option>
+                    </select> -->
+                    <span> Condition:</span>
+                    <select id="genderCon" name="stateCon">
+                         <option value = "SP_CNCR">Cancer</option>
+                        <option value = "SP_CHF">Health Failure</option>
+                        <option value = "SP_CHRNKIDN">Chronic Kidney Disease</option>
+                        <option value = "SP_DIABETES">Diabetes</option>
+                        <option value = "SP_DEPRESSN">Depression</option>
+                        <option value = "SP_ISCHMCHT">Ischemic Heart Disease</option>
+                        <option value = "SP_OSTEOPRS">Osteoporosis</option>
+                        <option value = "SP_RA_OA">Arthritis</option>
+                        <option value = "SP_STRKETIA">Stroke</option>
+                        <option value = "SP_ALZHDMTA">Alzheimers</option>
+                    </select>
+                    <button class="button">Submit</button>
+                    <h2> Currently showing risk analysis for {{gender_disease}}</h2>
+                </div>
+            </form>
+            <div style="position: relative; left:200px; top: 50px;">
+                {% set path = '/templates/' + gender_script %}{% include gender_script %} {% set path = '/templates/' + gender_div %}{% include gender_div %}
             </div>
+
         </article>
     </section>
     <div class="logo" target="_blank">
         <img onclick="goBack()" class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/45226/ettrics-logo.svg" alt="" />
     </div>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="/static/js/plotIndex.js"></script>
+    <script src="/static/js/companyIndex.js"></script>
     <script>
         var conditionVal, ageVal, raceVal, genVal;
 
@@ -187,7 +225,7 @@
 
         function goBack() {
             console.log("HELLO");
-            location.href = "../welcome.html";
+            location.href = "index.html";
         }
     </script>
 
