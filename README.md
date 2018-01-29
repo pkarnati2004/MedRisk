@@ -1,6 +1,6 @@
 # MedRisk: SheHacks healthcare Hack
 
-
+![alt text](https://raw.githubusercontent.com/pkarnati2004/healthcare_shehacks/frontpage.png)
 
 ## Why?
 
