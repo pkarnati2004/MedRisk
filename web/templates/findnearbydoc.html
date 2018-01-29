@@ -1,0 +1,120 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+    <link href="../static/css/companyFontStyle.css" rel="stylesheet">
+    <style>
+    body {
+        font-family: 'Montserrat';
+          line-height: 1.5;
+          -webkit-font-smoothing: antialiased;
+        text-align: center;
+        background-color:aliceblue;
+    }
+
+   
+    a {
+        text-decoration: none; 
+    }
+
+    a, a:visited {
+        color: rgb(84, 180, 210);
+    }
+
+    a:hover {
+        color: rgb(51,159,192);
+    }
+        
+    .topBar{
+        background-color: black;
+        display:block;
+    }
+    
+        table{
+            margin: 5 auto;
+        }
+        
+        td{
+            padding:30px;
+            align-content: right;
+            
+        }
+        
+        span{
+            padding:60px;
+        }
+
+        .title{
+            position:absolute;
+            left:600px;
+        }
+        
+        button{
+             background-color: Transparent;
+            background-repeat:no-repeat;
+            border: 2px solid black;
+            border-radius: 10px;
+            cursor:pointer;
+            overflow: hidden;
+            color: black;
+            font-family: Sans-serif;
+            font-size: 23px;
+            height: 90px;
+            width: 280px;
+            line-height: 60px;
+            outline-color: azure;
+            margin: 25px 25px;
+            text-align: center;
+            transition: all 0.3s ease 0s;
+        }
+    </style>
+</head>
+<body onload = "init()">
+    <div id = "topBar">
+        <h1>Nearby Doctors</h1>
+    </div>
+<div id="content-placeholder"></div>
+    <script>
+        var loc = '42.3509,-71.1089';
+        
+        var api_key = 'f7e6b478c538f0bfca3a85626303347c'; // Get your API key at developer.betterdoctor.com
+        var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location='+loc+',100&skip=2&limit=10&user_key=' + api_key;
+
+        function init(){
+            $.get(resource_url, function (data) {
+                // data: { meta: {<metadata>}, data: {<array[Practice]>} }
+                var template = Handlebars.compile(document.getElementById('docs-template').innerHTML);
+                document.getElementById('content-placeholder').innerHTML = template(data);
+            });
+        }
+        
+        function goback(){
+            location.href="home.html";
+        }
+    </script>
+<script id="docs-template" type="text/x-handlebars-template">
+    <table>
+        <thead>
+            <span>Name</span>
+            <span id = "title">Title</span>
+            <span>Picture</span>
+        </thead>
+        <tbody>
+        {{#data}}
+            <table>
+                <tr align = "center">
+                    <td><a href = "doctordetails.html?myVar1={{uid}}" target="_new">{{profile.first_name}} {{profile.last_name}}</a>
+                      <img src="{{ratings.0.image_url_small}}">
+                    </td>
+                    <td>{{profile.title}}</td>
+                    <td><img src="{{profile.image_url}}"></td>
+                </tr>
+            </table>
+        {{/data}}
+        </tbody>
+    </table>
+<button onclick = "goback()">Return</button>
+    
+</script>
+</body>
+    </html>

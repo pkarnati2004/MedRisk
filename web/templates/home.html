@@ -39,7 +39,7 @@
             color: rgb(29, 28, 28);
             position: absolute;
             top: 100px;
-            left: 500px;
+            left: 520px;
             /* position: relative;
             text-align: center;
             top: 70%;
@@ -114,7 +114,7 @@
 
 <body>
     <div class="container">
-        <h1>Welcome</h1>
+        <h1>MedRisk</h1>
         <h2>Choose Domain:</h2>
         <div style="text-align: center; top: 400px;">
             <button type="button" id="companyBtn"> Company </button>
@@ -132,6 +132,10 @@
 
         document.getElementById("userBtn").onclick = function() {
             location.href = "{{ url_for('form') }}";
+        };
+
+        document.getElementById("findDoctors").onclick = function() {
+            location.href = "{{ url_for('find_doctor') }}";
         };
     </script>
 

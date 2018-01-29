@@ -333,6 +333,10 @@ def submitted_form():
         gender=gender,
         race=race)
 
+@app.route('/find_doctor')
+def find_doctor():
+    return render_template('findnearbydoc.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)

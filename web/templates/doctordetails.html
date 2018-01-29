@@ -1,0 +1,122 @@
+<head>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+    <link href="../static/css/companyFontStyle.css" rel="stylesheet">
+    <style>
+    body {
+        font-family: 'Montserrat';
+          line-height: 1.5;
+          -webkit-font-smoothing: antialiased;
+        text-align: center;
+        background-color:aliceblue;
+    }
+
+    h1 {
+        color: #bb3794;
+    }
+    a {
+        text-decoration: none; 
+    }
+
+    a, a:visited {
+        color: rgb(84, 180, 210);
+    }
+
+    a:hover {
+        color: rgb(51,159,192);
+    }
+
+        table{
+            margin: 5 auto;
+        }
+    th {
+        text-align: left;
+    }
+
+    td, th {
+      padding: 15px;
+    }
+
+    .address {
+        font-size: 1em;
+        color: #888;
+    }
+
+    .bio {
+        font-size: 0.9em;
+    }
+        
+        img{
+            padding-top:50px;
+        }
+        
+        button{
+             background-color: Transparent;
+            background-repeat:no-repeat;
+            border: 2px solid black;
+            border-radius: 10px;
+            cursor:pointer;
+            overflow: hidden;
+            color: black;
+            font-family: Sans-serif;
+            font-size: 23px;
+            height: 90px;
+            width: 280px;
+            line-height: 60px;
+            outline-color: azure;
+            margin: 25px 25px;
+            text-align: center;
+            transition: all 0.3s ease 0s;
+        }
+    </style>
+</head>
+<body>
+<div id="content-placeholder"></div>
+    <script>
+        var query = window.location.search.substring(1);
+        var vars = query.split('=');
+        var doctor_uid = vars[1];
+        var api_key = 'f7e6b478c538f0bfca3a85626303347c'; // Get your API key at developer.betterdoctor.com
+        
+        var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors/'+ doctor_uid + '?user_key=' + api_key;
+
+        $.get(resource_url, function (data) {
+            // data: { meta: {<metadata>}, data: {<Doctor>} }
+            var template = Handlebars.compile(document.getElementById('doc-template').innerHTML);
+            document.getElementById('content-placeholder').innerHTML = template(data);
+        });
+        
+        function goBack(){
+            location.href = "findnearbydoc.html";
+        }
+    </script>
+<script id="doc-template" type="text/x-handlebars-template">
+<h1>{{data.profile.first_name}} {{data.profile.last_name}}, {{data.profile.title}}</h1>
+    <p class="address">
+        {{#data.practices}}
+        {{name}}<br>
+        {{visit_address.street}}<br>
+        {{visit_address.city}}, {{visit_address.state}} {{visit_address.zip}}
+        {{/data.practices}}
+    </p>
+    <p class="bio">{{data.profile.dynamic_bio}}</p>
+    <table>
+        <tr> 
+            <td><a href="{{data.attribution_url}}" target="_new">{{data.attribution_url}}</a></td>
+        </tr>
+        <tr>
+            <th></th>
+            <img src="{{data.profile.image_url}}" height = "250" width = "200">
+        </tr>
+        <tr>
+            <th>Specialties</th>
+            <td>
+            {{#data.specialties}}
+            {{name}}<br>
+            {{/data.specialties}}
+            </td>
+        </tr>
+    </table>
+    <button onclick = "goBack()">Return</button>
+</script>
+</body>
