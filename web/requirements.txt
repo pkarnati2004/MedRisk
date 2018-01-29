@@ -1,2 +1,5 @@
 Flask==0.12.2
 Werkzeug<0.13.0,>=0.12.0
+bokeh==0.12.13
+jupyter
+pandas==0.22.0
