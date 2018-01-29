@@ -170,8 +170,6 @@ ul {
           perspective: 1000px;
 }
 .panel__content {
-    position:relative;
-    left:50px;
   will-change: transform;
   -webkit-transform: scale(0.7) rotateX(-230deg);
           transform: scale(0.7) rotateX(-230deg);
