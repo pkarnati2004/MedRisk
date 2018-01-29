@@ -1,7 +1,5 @@
 # MedRisk: SheHacks healthcare Hack
 
-![alt text](https://raw.githubusercontent.com/pkarnati2004/healthcare_shehacks/frontpage.png)
-
 ## Why?
 
 We developed a Risk Assessment application given the CMS database from IBM for SheHacks 2018.
